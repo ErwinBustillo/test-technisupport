@@ -1,0 +1,46 @@
+<div class="container">
+      <h3>Editar cliente</h3>
+      <hr>
+      <form [formGroup]="form" (ngSubmit)="onClickEdit()" novalidate class="card border">
+        <div class="card-body">
+          <div class="form-group">
+            <label>Nombres</label>
+            <input formControlName="name" type="text" class="form-control col-sm-12" placeholder="Nombres">
+          </div>
+          <div class="form-group">
+            <label>Apellidos</label>
+            <input formControlName="last_name" type="text" class="form-control col-sm-12" placeholder="Apellidos">
+          </div>
+          <div class="form-group">
+            <label>Tipo de documento</label>
+            <select formControlName="doc_type" class="form-control col-sm-12">
+              <option value="CC">Cédula de ciudadanía</option>
+              <option value="CE">Cédula de extranjería</option>
+              <option value="TI">Tarjeta de identidad</option>
+              <option value="PASSPORT">Pasaporte</option>
+              <option value="VISA">Visa</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>No. del documento</label>
+            <input formControlName="doc_number" type="text" class="form-control col-sm-12" placeholder="Numero del documento">
+          </div>
+          <div class="form-group">
+            <label>Fecha de nacimiento</label>
+            <input formControlName="birth_date" type="date" class="form-control col-sm-12" placeholder="DD/MM/YYYY">
+          </div>
+          <div class="form-group">
+            <label>Observaciones</label>
+            <textarea formControlName="observation" class="form-control col-sm-12" cols="5" rows="5" placeholder="Digite las observaciones"></textarea>
+          </div>
+          <hr>
+          <div class="buttons">
+            <button type="button" class="btn  btn-danger  text-white" (click)="onClickCancel()">Volver</button>
+            <button [disabled]="!form.valid" type="submit" class="btn  btn-warning text-white">Editar</button>
+            
+          </div>
+          
+          
+        </div>
+      </form>
+</div>
